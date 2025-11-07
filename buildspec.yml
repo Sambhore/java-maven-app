@@ -3,34 +3,23 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      java: corretto17   # You can change this to corretto11 or corretto21 if needed
+      java: corretto17
     commands:
-      - echo "Installing Maven dependencies..."
+      - echo "Installing dependencies..."
       - mvn clean install -DskipTests
-
-  pre_build:
-    commands:
-      - echo "Running pre-build checks..."
-      - mvn validate
-
   build:
     commands:
-      - echo "Building the Maven project..."
+      - echo "Building the Java project..."
       - mvn package -DskipTests
-
   post_build:
     commands:
-      - echo "Build completed successfully!"
-      - echo "Running post-build steps..."
+      - echo "Build completed successfully on $(date)"
       - ls -lh target/
-      - echo "Build finished on `date`"
-
 artifacts:
   files:
-    - target/*.war     # Adjust if your artifact name differs
+    - target/*.war
   discard-paths: yes
   base-directory: target
-
 cache:
   paths:
-    - '/root/.m2/**/*'   # Caches Maven dependencies between builds for speed
+    - '/root/.m2/**/*'
