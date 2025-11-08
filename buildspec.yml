@@ -17,7 +17,7 @@ phases:
       - ls -lh target/
 artifacts:
   files:
-    - target/*.war
+    - target/maven-cloudaseem-app.war
   discard-paths: yes
   base-directory: target
 cache:
