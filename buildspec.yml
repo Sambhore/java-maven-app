@@ -12,6 +12,6 @@ phases:
       - mv target/maven-cloudaseem-app.war target/ROOT.war
 artifacts:
   files:
-    - target/maven-cloudaseem-app.war
+    - target/ROOT.war
     - appspec.yml
     - scripts/**        # your deployment scripts if any
