@@ -1,10 +1,13 @@
 version: 0.0
 os: linux
+
 files:
-  - source: target/*.war
+  - source: target/maven-cloudaseem-app.war
     destination: /opt/tomcat/webapps/
+
 hooks:
   AfterInstall:
     - location: scripts/restart_tomcat.sh
       timeout: 300
       runas: root
+
