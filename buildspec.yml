@@ -17,7 +17,7 @@ phases:
       - ls -lh target/
 artifacts:
   files:
-    - target/*.war
+    - target/*.jar
   discard-paths: yes
   base-directory: target
 cache:
