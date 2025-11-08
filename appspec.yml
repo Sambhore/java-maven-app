@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 
 files:
-  - source: target/maven-cloudaseem-app.war
+  - source: target/ROOT.war
     destination: /opt/tomcat/webapps/
 
 hooks:
